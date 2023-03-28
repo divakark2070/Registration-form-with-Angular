@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="row ">
+       <div class="col-lg-6 bg-warning mx-auto">
+        <h3>Log in here</h3> <br>
+        <form [formGroup]="formgroup"(ngSubmit)="login(formgroup.value)">
+           
+           <div>
+            <label><h5>Email :</h5><span class="text-danger small" *ngIf="formgroup.controls.email.touched && formgroup.controls.email.invalid">Enter email</span></label>
+            <input type="usrename" class="form-control" placeholder="email" formControlName="email">
+           </div><br>
+           <div>
+            <label><h5>Password :</h5> <span class="text-danger small" *ngIf="formgroup.controls.password.touched && formgroup.controls.password.invalid">enter password</span></label>
+            <input type="password" class="form-control" placeholder="password" formControlName="password">
+           </div><br>
+           <div>
+            <button type="submit" class="btn btn-outline-primary" [disabled]="formgroup.invalid" >Log in</button>
+         
+           <a class="text-danger" routerLink="/reg-form">Create new</a>
+           </div><br><br>
+        </form>
+       </div>
+    </div>
+</div>
